@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/api/greeting', async (req, res) => {
   const end = histogram.startTimer();
-  const name = req.query?.name || 'World';
+  const name = req.query.name || 'World';
 
   try {
     const result = await somethingThatCouldFail(`Hello, ${name}`);
